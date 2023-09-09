@@ -15,9 +15,7 @@ const ManagePlayers = () => {
 		axios
 			.get(apiUrl)
 			.then((res) => {
-				const newList = res.data.map((onePlayer) => ({ ...onePlayer, confirmDelete: false }));
-				console.log(newList);
-				setPlayers(newList);
+				setPlayers(res.data);
 			})
 			.catch((err) => console.log(err));
 	}, []);
@@ -27,7 +25,7 @@ const ManagePlayers = () => {
 			.post(`${apiUrl}`, newPlayer)
 			.then((res) => {
 				setManage("list");
-				setPlayers([...players, { ...res.data, confirmDelete: false }]);
+				setPlayers([...players, newPlayer]);
 				navigate("/players/list");
 			})
 			.catch((err) => {
