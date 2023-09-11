@@ -12,14 +12,12 @@ function App() {
 	}, []);
 
 	return (
-		<div className="">
+		<div>
 			<Nav />
 			<Routes>
 				<Route path="/" />
 				<Route path="/players/list" element={<ManagePlayers />} />
 				<Route path="/players/add" element={<ManagePlayers />} />
-				<Route path="/status/game/:num" element={<ManagePlayerStatus />} />
-				<Route path="/status/game/:num" element={<ManagePlayerStatus />} />
 				<Route path="/status/game/:num" element={<ManagePlayerStatus />} />
 			</Routes>
 		</div>

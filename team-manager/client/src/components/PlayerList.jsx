@@ -1,4 +1,5 @@
 import { useState } from "react";
+import DeleteButton from "./DeleteButton";
 
 const PlayerList = (props) => {
 	const { players, deletePlayer, setPlayers } = props;
@@ -27,11 +28,14 @@ const PlayerList = (props) => {
 									<td>{player.name}</td>
 									<td>{player.position}</td>
 									<td>
+										{/* <DeleteButton playerName={player.name} /> */}
+
 										<button
 											className="btn btn-danger"
 											onClick={() => confirmAction(player._id, player.name)}>
 											Delete
 										</button>
+										<dialog></dialog>
 									</td>
 								</tr>
 							);

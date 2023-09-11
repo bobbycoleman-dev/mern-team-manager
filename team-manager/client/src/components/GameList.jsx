@@ -8,7 +8,7 @@ const GameList = (props) => {
 		const filteredPlayer = players.filter((player) => player._id === playerId);
 		const playerObject = filteredPlayer[0];
 		const updatedPlayer = { ...playerObject, status: { ...playerObject.status, [currentGame]: newStatus } };
-
+		console.log(updatedPlayer);
 		updatePlayerStatus(playerId, updatedPlayer);
 	};
 
